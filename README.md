@@ -10,7 +10,7 @@ A sleek and minimal real-time code editor built with **React**, **Monaco Editor*
 - 🎨 **Monaco Editor** – The same powerful editor that powers VS Code.
 - 📤 **Run Code Instantly** – Executes code via the [Piston API](https://github.com/engineer-man/piston).
 - 🧠 **Smart Code Snippets** – Preloaded boilerplate code for each language.
-- 📥 **Input Support** – Provide custom `stdin` to simulate user input.
+- 📥 **Input Support** – Provide custom `stdin` to simulate user input (In future) .
 - ⚙️ **Responsive UI** – Built with Chakra UI for accessibility and responsiveness.
 
 ---
