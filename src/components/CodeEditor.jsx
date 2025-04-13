@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, VStack, useBreakpointValue } from "@chakra-ui/react";
 import { Editor } from "@monaco-editor/react";
 import React, { useRef, useState } from "react";
 import LanguageSelector from "./LanguageSelector";
@@ -19,10 +19,12 @@ const CodeEditor = () => {
     setValue(CODE_SNIPPETS[language]);
   };
 
+  const layout = useBreakpointValue({ base: VStack, md: HStack });
+
   return (
-    <Box>
-      <HStack spacing={4}>
-        <Box w="50%" ml ={6} borderRadius="12px" overflow="hidden" border="1px solid #444">
+    <Box px={4}>
+      {React.createElement(layout, { spacing: 4, align: "stretch" },
+        <Box w={{ base: "100%", md: "50%" }} borderRadius="12px" overflow="hidden" border="1px solid #444">
           <LanguageSelector language={language} onSelect={onSelect} />
           <Editor
             height="75vh"
@@ -32,10 +34,11 @@ const CodeEditor = () => {
             onMount={onMount}
             value={value}
             onChange={(value) => setValue(value)}
+            options={{ fontSize: 14 }}
           />
-        </Box>
+        </Box>,
         <Output editorRef={editorRef} language={language} />
-      </HStack>
+      )}
     </Box>
   );
 };
