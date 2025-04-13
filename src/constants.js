@@ -6,7 +6,8 @@ export const Language_versions = {
     csharp: "6.12.0",
     php: "8.2.3",
     rust: "1.68.2",
-    c: "10.2.0"
+    c: "10.2.0",
+    cpp: "10.2.0" 
 }; 
 export const CODE_SNIPPETS = {
   javascript: `function greet(name) {
@@ -69,6 +70,15 @@ int main() {
   char name[] = "Vignesh";
   printf("Hello, %s!\\n", name);
   return 0;
+}
+`,
+cpp: `#include <iostream>
+using namespace std;
+
+int main() {
+    string name = "Vignesh";
+    cout << "Hello, " << name << "!" << endl;
+    return 0;
 }
 `
 };
