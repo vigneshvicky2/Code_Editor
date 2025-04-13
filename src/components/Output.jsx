@@ -31,7 +31,7 @@ const Output = ({editorRef, language}) => {
 
     }
     return (
-        <Box w="50%">
+        <Box w="50%" >
             <Text mb={2} fontSize="lg">Output</Text>
             <Button
                 variant="outline"
@@ -45,6 +45,7 @@ const Output = ({editorRef, language}) => {
             <Box   
             height ='50vh'
              p ={2}
+             overflowY='auto'
              color={
                 isError ? 'red.400' : ''
              }
