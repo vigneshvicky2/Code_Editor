@@ -9,6 +9,7 @@ const CodeEditor = () => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
   const [language, setLanguage] = useState("java");
+
   const onMount = (editor) => {
     editorRef.current = editor;
     editor.focus();
