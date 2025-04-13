@@ -7,6 +7,7 @@ const Input = ({ input, setInput }) => {
       <Text mb={3} fontSize="lg">Input</Text>
       <Textarea
         placeholder="Enter your input here"
+        resize="none"
         size="md"
         height="75%"
         value={input}
