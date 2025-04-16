@@ -4,7 +4,7 @@ const Input = ({ input, setInput }) => {
 
   return (
     <Box   height ='25vh' mr={4}>
-      <Text mb={3} fontSize="lg">Input</Text>
+      <Text mb={3} fontSize="lg" >Input</Text>
       <Textarea
         placeholder="Enter your input here"
         resize = "none"

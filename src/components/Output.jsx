@@ -1,16 +1,15 @@
-import { Button, useToast } from '@chakra-ui/react'
+import { Button,Box, useToast , Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { Box, Text } from '@chakra-ui/react'
 import { executeCode } from '../api'
 import Input from './Input'
 
+  
 const Output = ({ editorRef, language }) => {
     const toast = useToast();
     const [output, setOutput] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [input, setInput] = useState("");
-
     const handleDownload = () => {
         const code = editorRef.current.getValue();
         const joined_output = output.join("\n") || '';
@@ -103,6 +102,12 @@ const Output = ({ editorRef, language }) => {
                 loadingText="Running..."
                 isLoading={isLoading}
                 onClick={runCode}
+                _hover={
+                    !isLoading ?
+                    {
+                    boxShadow: "0 0 20px rgba(72, 187, 120, 0.6)",
+                    // transition: "all 0.2s ease-in-out",
+                  } : {}}
             >
                 Run Code
             </Button>
@@ -113,6 +118,12 @@ const Output = ({ editorRef, language }) => {
                 ml={4}
                 onClick={handleDownload}
                 isDisabled={!output}
+                _hover={
+                    output ?
+                    {
+                    boxShadow: "0 0 20px rgba(72, 187, 120, 0.6)",
+                    // transition: "all 0.2s ease-in-out",
+                  } : {}}
             >
                 Download Code + Output
             </Button>
