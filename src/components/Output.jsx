@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Box, Text } from '@chakra-ui/react'
 import { executeCode } from '../api'
 import Input from './Input'
+
 const Output = ({ editorRef, language }) => {
     const toast = useToast();
     const [output, setOutput] = useState(null);
@@ -80,6 +81,7 @@ const Output = ({ editorRef, language }) => {
         } catch (error) {
             toast({
                 title: 'An error occurred',
+                variant: 'solid',
                 description: error.message || "Something went wrong",
                 status: 'error',
                 duration: 5000,
@@ -95,8 +97,10 @@ const Output = ({ editorRef, language }) => {
             <Text mb={2} fontSize="lg">Output</Text>
             <Button
                 variant="outline"
+        
                 colorScheme='green'
                 mb={4}
+                loadingText="Running..."
                 isLoading={isLoading}
                 onClick={runCode}
             >
